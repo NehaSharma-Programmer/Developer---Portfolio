@@ -1,30 +1,46 @@
 
 import "../styles/navbar.css";
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
-function Navbar() {
-  return (
-    <nav className="navbar">
+function Navbar(){
 
-      <div className="logo">
-        Neha Sharma
-      </div>
+const [open,setOpen] = useState(false);
 
-      <ul>
+return(
+<nav className="navbar">
 
-        <li><a href="#">Home</a></li>
+<h2 className="logo">
+Neha Sharma
+</h2>
 
-        <li><a href="#about">About</a></li>
 
-        <li><a href="#skills">Skills</a></li>
+<div className={open ? "nav-links active" : "nav-links"}>
 
-        <li><a href="#projects">Projects</a></li>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
 
-        <li><a href="#contact">Contact</a></li>
+</div>
 
-      </ul>
 
-    </nav>
-  );
+<div 
+className="menu"
+onClick={()=>setOpen(!open)}
+>
+
+{
+open ? <FaTimes/> : <FaBars/>
+}
+
+</div>
+
+
+</nav>
+)
+
 }
 
 export default Navbar;

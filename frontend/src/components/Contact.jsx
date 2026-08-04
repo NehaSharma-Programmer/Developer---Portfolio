@@ -1,12 +1,11 @@
 
-import {useState} from "react";
-import axios from "axios";
+import "../styles/contact.css";
+import { useState } from "react";
 
 
 function Contact(){
 
-
-const [form,setForm]=useState({
+const [formData,setFormData] = useState({
 
 name:"",
 email:"",
@@ -15,66 +14,61 @@ message:""
 });
 
 
-
 const handleChange=(e)=>{
 
-setForm({
+setFormData({
 
-...form,
+...formData,
 
 [e.target.name]:e.target.value
 
-})
+});
 
-}
-
-
+};
 
 
-const submitForm=async(e)=>{
+
+const handleSubmit=(e)=>{
 
 e.preventDefault();
 
 
-try{
-
-await axios.post(
-
-"https://your-render-backend-url.onrender.com/api/contact",
-
-form
-
-);
+alert("Message sent successfully!");
 
 
-alert("Message Sent Successfully");
+setFormData({
+
+name:"",
+email:"",
+message:""
+
+});
 
 
-}
-
-catch(error){
-
-alert("Something went wrong");
-
-}
-
-
-}
+};
 
 
 
 return(
 
-<section id="contact">
+<section className="contact" id="contact">
 
 
-<h1>
+<h2>
 Contact Me
-</h1>
+</h2>
 
+
+
+<div className="contact-container">
 
 
 <div className="contact-info">
+
+
+<h3>
+Let's Connect
+</h3>
 
 
 <p>
@@ -109,15 +103,22 @@ linkedin.com/in/neha-sharma-7099a0327
 
 
 
-<form onSubmit={submitForm}>
+<form 
+className="contact-form"
+onSubmit={handleSubmit}
+>
 
 
 <input
+
+type="text"
 
 name="name"
 
 placeholder="Your Name"
 
+value={formData.name}
+
 onChange={handleChange}
 
 />
@@ -126,13 +127,18 @@ onChange={handleChange}
 
 <input
 
+type="email"
+
 name="email"
 
-placeholder="Email"
+placeholder="Your Email"
+
+value={formData.email}
 
 onChange={handleChange}
 
 />
+
 
 
 
@@ -140,7 +146,11 @@ onChange={handleChange}
 
 name="message"
 
-placeholder="Message"
+placeholder="Your Message"
+
+rows="5"
+
+value={formData.message}
 
 onChange={handleChange}
 
@@ -153,12 +163,15 @@ Send Message
 </button>
 
 
+
 </form>
 
 
 
-</section>
+</div>
 
+
+</section>
 
 )
 

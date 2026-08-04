@@ -1,151 +1,117 @@
 
-import {motion} from "framer-motion";
+import "../styles/projects.css";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
+
+function Projects(){
 
 const projects=[
 
-
 {
-
 title:"TaskFlow",
-
-tech:"MERN Stack",
-
-desc:
+stack:"MERN Stack",
+description:
 "Mini Project Management System with authentication, project management, task CRUD operations, Kanban board and admin dashboard.",
-
 features:[
 "User Authentication",
 "Role Based Access",
 "Kanban Board",
 "Admin Dashboard",
 "Task Management"
-]
-
+],
+github:"https://github.com/NehaSharma-Programmer/Taskflow1",
+live:"#"
 },
 
 
-
 {
-
 title:"Job Portal",
-
-tech:"MERN Stack",
-
-desc:
+stack:"MERN Stack",
+description:
 "Full-stack job portal connecting job seekers and employers with job listings, profiles and application tracking.",
-
 features:[
 "Job Listings",
 "Candidate Profiles",
 "Resume Upload",
 "Employer Job Posting"
-]
-
+],
+github:"#",
+live:"#"
 },
 
 
-
 {
-
 title:"MechMate",
-
-tech:"MERN Stack",
-
-desc:
+stack:"MERN Stack",
+description:
 "Automobile Service Management System allowing customers to book and track vehicle servicing with AI chatbot support.",
-
 features:[
 "Vehicle Service Booking",
 "Service Tracking",
 "Customer Management",
 "AI Chatbot"
-]
-
+],
+github:"#",
+live:"#"
 },
 
 
-
 {
-
 title:"Labour Management System",
-
-tech:"MERN Stack",
-
-desc:
+stack:"MERN Stack",
+description:
 "Platform connecting labourers with employers through worker profiles and job listings.",
-
 features:[
 "Worker Profiles",
 "Job Listings",
 "Assignment Tracking"
-]
-
+],
+github:"#",
+live:"#"
 }
-
 
 
 ];
 
 
-
-
-function Projects(){
-
-
 return(
 
-<section id="projects">
-
-
-<h1>
-Projects
-</h1>
-
-
-<div className="projects">
-
-
-{
-
-projects.map((project,index)=>(
-
-
-<motion.div
-
-className="project-card"
-
-key={index}
-
-initial={{opacity:0,scale:0.8}}
-
-whileInView={{opacity:1,scale:1}}
-
-transition={{duration:0.5}}
-
->
+<section className="projects" id="projects">
 
 
 <h2>
-{project.title}
+Projects
 </h2>
 
 
-<h4>
-{project.tech}
-</h4>
+<div className="project-container">
+
+
+{
+projects.map((project,index)=>(
+
+
+<div className="project-card" key={index}>
+
+
+<h3>
+{project.title}
+</h3>
+
+
+<span>
+{project.stack}
+</span>
 
 
 <p>
-{project.desc}
+{project.description}
 </p>
-
 
 
 <ul>
 
 {
-
 project.features.map((item,i)=>(
 
 <li key={i}>
@@ -153,26 +119,32 @@ project.features.map((item,i)=>(
 </li>
 
 ))
-
 }
 
 </ul>
 
 
-
-<button>
-View Github
-</button>
+<div className="project-buttons">
 
 
+<a href={project.github} target="_blank">
+<FaGithub/> Github
+</a>
 
-</motion.div>
+
+<a href={project.live}>
+<FaExternalLinkAlt/> Demo
+</a>
+
+
+</div>
+
+
+</div>
 
 
 ))
-
 }
-
 
 
 </div>

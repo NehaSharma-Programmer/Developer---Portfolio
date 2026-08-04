@@ -1,74 +1,115 @@
 
+import "../styles/skills.css";
+
 import {
-
-FaJava,
-FaReact,
-FaNodeJs,
-FaGitAlt
-
+  FaJava,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaGithub,
 } from "react-icons/fa";
 
-
 import {
-
-SiMongodb,
-SiJavascript,
-SiExpress,
-SiTailwindcss
-
+  SiMongodb,
+  SiExpress,
+  SiTailwindcss,
+  SiMysql,
 } from "react-icons/si";
-
-
-
-const skills=[
-
-["Java",<FaJava/>],
-
-["JavaScript",<SiJavascript/>],
-
-["React.js",<FaReact/>],
-
-["Node.js",<FaNodeJs/>],
-
-["Express.js",<SiExpress/>],
-
-["MongoDB",<SiMongodb/>],
-
-["Tailwind CSS",<SiTailwindcss/>],
-
-["Git/Github",<FaGitAlt/>],
-
-["DSA","🧠"],
-
-["OOP","⚙️"]
-
-];
-
 
 
 function Skills(){
 
+const skills = [
+
+{
+name:"Java",
+icon:<FaJava/>
+},
+
+{
+name:"JavaScript",
+icon:<FaJs/>
+},
+
+{
+name:"React.js",
+icon:<FaReact/>
+},
+
+{
+name:"Node.js",
+icon:<FaNodeJs/>
+},
+
+{
+name:"Express.js",
+icon:<SiExpress/>
+},
+
+{
+name:"MongoDB",
+icon:<SiMongodb/>
+},
+
+{
+name:"Tailwind CSS",
+icon:<SiTailwindcss/>
+},
+
+{
+name:"MySQL",
+icon:<SiMysql/>
+},
+
+{
+name:"Git & GitHub",
+icon:<FaGithub/>
+},
+
+{
+name:"DSA",
+icon:"🧠"
+},
+
+{
+name:"OOP",
+icon:"⚙️"
+}
+
+
+];
+
+
 return(
 
-<section id="skills">
+<section className="skills" id="skills">
 
-
-<h1>
+<h2>
 Technical Skills
-</h1>
+</h2>
 
 
-<div className="skills">
+<div className="skills-container">
 
 
 {
 skills.map((skill,index)=>(
 
-<div className="skill-card" key={index}>
+<div 
+className="skill-card"
+key={index}
+>
 
-<span>{skill[1]}</span>
 
-<p>{skill[0]}</p>
+<div className="skill-icon">
+{skill.icon}
+</div>
+
+
+<h3>
+{skill.name}
+</h3>
 
 
 </div>
@@ -78,17 +119,15 @@ skills.map((skill,index)=>(
 }
 
 
-
 </div>
-
 
 
 </section>
 
 )
 
-}
 
+}
 
 
 export default Skills;

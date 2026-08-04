@@ -1,47 +1,40 @@
 
-import {motion} from "framer-motion";
+import "../styles/experience.css";
 
 
 function Experience(){
 
 return(
 
-<section id="experience">
-
-
-<h1>
-Experience
-</h1>
-
-
-<motion.div
-
-className="experience-card"
-
-initial={{opacity:0,y:50}}
-
-whileInView={{opacity:1,y:0}}
-
-transition={{duration:0.6}}
-
->
+<section className="experience" id="experience">
 
 
 <h2>
-MERN Stack Developer Intern
+Experience
 </h2>
 
 
+<div className="timeline">
+
+
+<div className="experience-card">
+
+
+<div className="dot"></div>
+
+
 <h3>
-Anudip Foundation
+MERN Stack Developer Intern
 </h3>
 
 
-<p>
+<h4>
+Anudip Foundation
+</h4>
 
-Worked on full-stack web development projects using
-MERN stack technologies.
 
+<p className="duration">
+MERN Stack Development Internship
 </p>
 
 
@@ -67,11 +60,13 @@ Implemented authentication and backend integration
 Collaborated on real-world software development projects
 </li>
 
-
 </ul>
 
 
-</motion.div>
+</div>
+
+
+</div>
 
 
 </section>

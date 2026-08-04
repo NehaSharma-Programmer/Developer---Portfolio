@@ -4,99 +4,85 @@ import { TypeAnimation } from "react-type-animation";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 function Hero() {
-
   return (
+    <section className="hero" id="home">
 
-<section className="hero">
+      <div className="hero-content">
 
-<div className="left">
+        <p className="hello">
+          Hello 👋 I'm
+        </p>
 
-<h3>Hello 👋</h3>
+        <h1>
+          Neha Sharma
+        </h1>
 
-<h1>I'm Neha Sharma</h1>
 
-<TypeAnimation
+        <h2>
+          <TypeAnimation
+            sequence={[
+              "Software Developer",
+              2000,
+              "MERN Stack Developer",
+              2000,
+              "Full Stack Developer",
+              2000
+            ]}
+            speed={50}
+            repeat={Infinity}
+          />
+        </h2>
 
-sequence={[
-"Software Developer",
-2000,
 
-"MERN Stack Developer",
-2000,
+        <p className="description">
+          B.Tech Computer Science Engineering student passionate about
+          building scalable full-stack web applications using React,
+          Node.js, Express.js and MongoDB.
+        </p>
 
-"Java Developer",
-2000
 
-]}
+        <div className="hero-buttons">
 
-speed={50}
+          <a href="/resume.pdf" download>
+            <button>
+              Download Resume
+            </button>
+          </a>
 
-repeat={Infinity}
 
-/>
+          <a 
+          href="https://github.com/NehaSharma-Programmer"
+          target="_blank"
+          >
+            <FaGithub/>
+          </a>
 
-<p>
 
-Passionate Full Stack Developer focused on building scalable,
-responsive and user-friendly web applications.
+          <a 
+          href="https://linkedin.com/in/neha-sharma-7099a0327"
+          target="_blank"
+          >
+            <FaLinkedin/>
+          </a>
 
-</p>
+        </div>
 
-<div className="buttons">
 
-<a href="/resume.pdf" download>
+      </div>
 
-<button>
 
-Download Resume
+      <div className="hero-image">
 
-</button>
+        <div className="profile-circle">
+          👩‍💻
+        </div>
 
-</a>
+      </div>
 
-<a
-href="https://github.com/NehaSharma-Programmer"
-target="_blank"
->
 
-<button>
-
-GitHub
-
-</button>
-
-</a>
-
-<a
-href="https://linkedin.com/in/neha-sharma-7099a0327"
-target="_blank"
->
-
-<button>
-
-LinkedIn
-
-</button>
-
-</a>
-
-</div>
-
-</div>
-
-<div className="right">
-
-<div className="circle">
-
-👩‍💻
-
-</div>
-
-</div>
-
-</section>
-
+    </section>
   );
 }
+
 
 export default Hero;
