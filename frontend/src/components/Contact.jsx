@@ -1,5 +1,6 @@
 
 
+```jsx
 import "../styles/contact.css";
 import { useState } from "react";
 
@@ -21,30 +22,33 @@ function Contact() {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://developer-portfolio-oulh.onrender.com/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://developer-portfolio-oulh.onrender.com/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const data = await response.json();
 
-      if (response.ok) {
-        alert("Message sent successfully!");
-
-        setFormData({
-          name: "",
-          email: "",
-          message: "",
-        });
-      } else {
-        alert(data.message || "Failed to send message");
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to send message");
       }
+
+      alert("Message sent successfully!");
+
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
     } catch (error) {
       console.error("Contact form error:", error);
-      alert("Something went wrong. Please try again.");
+      alert("Something went wrong. Please try again later.");
     }
   };
 
@@ -62,12 +66,24 @@ function Contact() {
 
           <p>
             Github:
-            github.com/NehaSharma-Programmer
+            <a
+              href="https://github.com/NehaSharma-Programmer"
+              target="_blank"
+              rel="noreferrer"
+            >
+              github.com/NehaSharma-Programmer
+            </a>
           </p>
 
           <p>
             LinkedIn:
-            linkedin.com/in/neha-sharma-7099a0327
+            <a
+              href="https://www.linkedin.com/in/neha-sharma-7099a0327"
+              target="_blank"
+              rel="noreferrer"
+            >
+              linkedin.com/in/neha-sharma-7099a0327
+            </a>
           </p>
         </div>
 
@@ -107,4 +123,4 @@ function Contact() {
 }
 
 export default Contact;
-
+```
