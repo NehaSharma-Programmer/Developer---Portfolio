@@ -20,9 +20,23 @@ features:[
 "Task Management"
 ],
 github:"https://github.com/NehaSharma-Programmer/Taskflow1",
-live:"#"
+live:"https://taskflow1-1jps.onrender.com"
 },
 
+{
+title:"MechMate",
+stack:"MERN Stack",
+description:
+"Automobile Service Management System allowing customers to book and track vehicle servicing with AI chatbot support.",
+features:[
+"Vehicle Service Booking",
+"Service Tracking",
+"Customer Management",
+"AI Chatbot"
+],
+github:"https://github.com/NehaSharma-Programmer/MechMate.git",
+live:"   https://mech-mate.vercel.app"
+},
 
 {
 title:"Job Portal",
@@ -40,20 +54,7 @@ live:"#"
 },
 
 
-{
-title:"MechMate",
-stack:"MERN Stack",
-description:
-"Automobile Service Management System allowing customers to book and track vehicle servicing with AI chatbot support.",
-features:[
-"Vehicle Service Booking",
-"Service Tracking",
-"Customer Management",
-"AI Chatbot"
-],
-github:"#",
-live:"#"
-},
+
 
 
 {
