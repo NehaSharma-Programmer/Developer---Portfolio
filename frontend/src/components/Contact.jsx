@@ -1,6 +1,6 @@
 
 
-```jsx
+
 import "../styles/contact.css";
 import { useState } from "react";
 
@@ -61,26 +61,28 @@ function Contact() {
           <h3>Let's Connect</h3>
 
           <p>📍 Meerut, India</p>
+
           <p>📧 nehasha952@gmail.com</p>
+
           <p>📞 +91-9582953685</p>
 
           <p>
-            Github:
+            Github:{" "}
             <a
               href="https://github.com/NehaSharma-Programmer"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               github.com/NehaSharma-Programmer
             </a>
           </p>
 
           <p>
-            LinkedIn:
+            LinkedIn:{" "}
             <a
               href="https://www.linkedin.com/in/neha-sharma-7099a0327"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               linkedin.com/in/neha-sharma-7099a0327
             </a>
@@ -123,4 +125,4 @@ function Contact() {
 }
 
 export default Contact;
-```
+
