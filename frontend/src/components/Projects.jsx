@@ -47,8 +47,8 @@ function Projects() {
         "Resume Upload",
         "Employer Job Posting",
       ],
-      github: "#",
-      live: "#",
+      github: "https://github.com/NehaSharma-Programmer/Developer---Portfolio",
+      live: "https://job-portal-coral-mu-61.vercel.app/",
     },
 
     {
